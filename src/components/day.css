@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Oswald&display=swap');
+
+.day {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 160px;
+    min-height: 450px;
+    background-color: var(--background);  
+    border-radius: 50px;  
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1), 11px 4px 34px rgba(32, 77, 92, 0.25);
+}
+
+.icon {
+    align-self: center;
+}
+
+.temperature {
+    font-family: 'Oswald', sans-serif;
+  color: var(--temperature);
+  font-size: 2rem;
+}
+
+.content {
+  color: var(--content);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.cloud {
+  --background: #4DB0D3;
+  --temperature: #E6DF95;
+  --content: #D3EBF4;
+}
+
+.clear {
+  --background: #E6DF95;
+  --temperature: #4DB0D3;
+  --content: #247490;
+}
+
+.thunderstorm {
+  --background: #0E2E3A;
+  --temperature: #E6DF95;
+  --content: #D3EBF4;
+}
+
+.snow {
+  --background: #BCE1EF;
+  --temperature: #0E2E3A;
+  --content: #247490;
+}
+
+.partly-cloudy {
+  --background: #4DB0D3;
+  --temperature: #E6DF95;
+  --content: #D3EBF4;
+}
+
+.rain, .drizzle {
+  --background: #2B8BAD;
+  --temperature: #E6DF95;
+  --content: #D3EBF4;
+}
