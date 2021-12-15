@@ -14,20 +14,27 @@
 
 .icon {
     align-self: center;
+    padding-top: 25px;
 }
 
 .temperature {
     font-family: 'Oswald', sans-serif;
   color: var(--temperature);
-  font-size: 2rem;
+  font-size: 5.5rem;
 }
 
 .content {
   color: var(--content);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: flex-start;
+  padding-bottom: 25px;
+  font-size: 1.2rem;
+}
+
+.precipitation, .low {
+  position: relative;
+  top: 10px;
 }
 
 .cloud {
