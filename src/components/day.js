@@ -44,15 +44,15 @@ import './day.css';
     <div className='day-wrapper'>
       <DayWeek day={dateTime.getDay()} date={dateTime.getDate()} />
       <div className={'day ' + weatherToday}>
-        <img src={imgSrc} className='icon' height={'120px'} width={'120px'} />
+        <img src={imgSrc} className='icon' height={'120px'} width={'120px'} alt='weather icon' />
         <div className='temperature'>{Math.round(day.temp['day']) + '°'}</div>
         <div className='content'>
           <div>
-            <img src={precipitation} className='precipitation' />{' '}
+            <img src={precipitation} className='precipitation' alt='precipitation icon' />{' '}
             {Math.round(day.pop) * 100 + '%'}
           </div>
           <div>
-            <img src={low} className='low' /> {Math.round(day.temp['min'])}
+            <img src={low} className='low' alt='low temp'/> {Math.round(day.temp['min'])}
           </div>
         </div>
       </div>
