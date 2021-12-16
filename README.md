@@ -31,11 +31,11 @@
     <br />    
     <br />
     <br />
-    <a href="https://github.com/voiceinthedark/weather-app-js-advent">View Demo</a>
+    <a href="https://voiceinthedark.github.io/React-Weather/">View Demo</a>
     ·
-    <a href="https://github.com/voiceinthedark/weather-app-js-advent/issues">Report Bug</a>
+    <a href="https://github.com/voiceinthedark/react-weather/issues">Report Bug</a>
     ·
-    <a href="https://github.com/voiceinthedark/weather-app-js-advent/issues">Request Feature</a>
+    <a href="https://github.com/voiceinthedark/react-weather/issues">Request Feature</a>
   </p>
 </div>
 

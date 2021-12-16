@@ -4,10 +4,6 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 require('dotenv').config({ path: `${__dirname}/.env` });
-// const path = require('path');
-// require('dotenv').config({ path: require('find-config')('.env') });
-// const ck = require('ckey');
-// require('dotenv').config();
 
 function App() {
   const [weather, setWeather] = useState([]);
@@ -18,25 +14,33 @@ function App() {
 
   const API_key =
     process.env.REACT_APP_JSCHALLENGE08_API_KEY;
-  const REACT_APP_GEO_API_KEY = process.env.REACT_APP_GEOCODING_API_KEY;
-  // console.log(
-  //   '🚀 ~ file: App.js ~ line 20 ~ App ~ GEO_API_KEY',
-  //   REACT_APP_GEO_API_KEY
-  // );  
+  const REACT_APP_GEO_API_KEY = process.env.REACT_APP_GEOCODING_API_KEY;  
 
   useEffect(() => {
-    if(navigator.geolocation){
-      navigator.geolocation.getCurrentPosition((position) => {
-        setLatitude(position.coords.latitude);
-        // // console.log("🚀 ~ file: App.js ~ line 24 ~ navigator.geolocation.getCurrentPosition ~ latitude", latitude)
-        setLongitude(position.coords.longitude);        
-        // // console.log("🚀 ~ file: App.js ~ line 26 ~ navigator.geolocation.getCurrentPosition ~ longitude", longitude)
-        
-      },
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setLatitude(position.coords.latitude);
+          console.log(
+            '🚀 ~ file: App.js ~ line 24 ~ navigator.geolocation.getCurrentPosition ~ latitude',
+            position.coords.latitude
+          );
+          setLongitude(position.coords.longitude);
+          console.log(
+            '🚀 ~ file: App.js ~ line 26 ~ navigator.geolocation.getCurrentPosition ~ longitude',
+            position.coords.longitude
+          );
+        },
         (error) => {
           setErrorMessage(error.message);
-        });
+        }
+      );
     }
+  }, []);
+
+  useEffect(() => {    
+
+    console.log(latitude, longitude);
 
     axios
       .get(
@@ -56,14 +60,15 @@ function App() {
     axios.get(
       `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely,hourly,alerts&appid=${API_key}&units=metric`
     ).then((response) => {
-      // console.log(response.data);
       const { daily } = response.data;
       setWeather(daily);
     }).catch((error) => {
       console.log(error);
     });
     
-  }, []); 
+  }, [latitude, longitude]); 
+
+  
 
   return (
     <div className="App">  
