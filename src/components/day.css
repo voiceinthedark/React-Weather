@@ -12,6 +12,11 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1), 11px 4px 34px rgba(32, 77, 92, 0.25);
 }
 
+.day-wrapepr {
+  display: flex;
+  flex-direction: column;
+}
+
 .icon {
     align-self: center;
     padding-top: 25px;

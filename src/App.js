@@ -10,9 +10,9 @@ function App() {
 
   const API_key =
     process.env.JSCHALLENGE08_API_KEY || 'b3db22618f1670545706465f3df93733';
-  const LATITUDE = process.env.LATITUDE || 33.874;
-  const LONGITUDE = process.env.LONGITUDE || 35.5088;
-  console.log(API_key);
+  const LATITUDE = process.env.LATITUDE || -33.86882;
+  const LONGITUDE = process.env.LONGITUDE || 151.20929;
+  // console.log(API_key);
 
 
   useEffect(() => {
